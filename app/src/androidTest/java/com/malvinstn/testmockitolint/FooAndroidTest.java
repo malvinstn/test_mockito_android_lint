@@ -23,6 +23,8 @@ public class FooAndroidTest {
 
     @Test
     public void testDoFoo() {
+        // Throws java.lang.UnsupportedOperationException:
+        // cannot proxy inaccessible class class com.malvinstn.testmockitolint.Bar.
         Bar mockBar = Mockito.mock(Bar.class);
         when(mockBar.bar()).thenReturn(0);
         int i = foo.doFoo(mockBar);
@@ -31,6 +33,8 @@ public class FooAndroidTest {
 
     @Test
     public void testDoFoo2() {
+        // Throws org.mockito.exceptions.misusing.MissingMethodInvocationException:
+        // when() requires an argument which has to be 'a method call on a mock'.
         Bar2 mockBar2 = Mockito.mock(Bar2.class);
         when(mockBar2.bar()).thenReturn(0);
         int i = foo.doFoo(mockBar2);
@@ -39,6 +43,7 @@ public class FooAndroidTest {
 
     @Test
     public void testDoFoo3() {
+        // Runs fine
         Bar3 mockBar3 = Mockito.mock(Bar3.class);
         when(mockBar3.bar()).thenReturn(0);
         int i = foo.doFoo(mockBar3);

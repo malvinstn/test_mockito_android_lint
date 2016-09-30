@@ -7,6 +7,7 @@ import org.mockito.Mockito;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
+// All unit test will run without errors.
 public class FooUnitTest {
 
     private Foo foo;
@@ -14,7 +15,6 @@ public class FooUnitTest {
     @Before
     public void setUp() throws Exception {
         foo = new Foo();
-
     }
 
     @Test
